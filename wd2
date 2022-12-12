@@ -13,9 +13,7 @@ attributes from d2 file. All arguments will be passed to the d2 cli,
 but these additional configs overwrite cli arguments with the
 same name.
 
-See \`d2 --help\` or \`man d2\` for detailed docs.
-
-See more docs and the source code at https://oss.terrastruct.com/d2
+$(d2 --help | tail -n +6 - | sed -e 's/d2 \(layout\|fmt\)/wd2 \1/')
 EOF
 }
 
