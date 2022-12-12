@@ -10,9 +10,8 @@ additional configs overwrite cli arguments with the same name.
 
 ## Nix Flake
 
-This repo is also packaged via Nix flakes, the language server binary package is
-available through the default flake output `github:pleshevskiy/wd2` with the
-path `bin/wd2`.
+This repo is also packaged via Nix flakes, the package is available through the
+default flake output `github:pleshevskiy/wd2` with the path `bin/wd2`.
 
 You can enable flakes support in your nix configuration, and then run nix
 profile install `github:pleshevskiy/wd2` to get `wd2` installed. You can also
