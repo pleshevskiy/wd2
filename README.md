@@ -39,3 +39,8 @@ Then run the `wd2` script
 ```sh
 wd2 -w path/to/your/file.d2
 ```
+
+# Limitation
+
+You have to restart the watch server when you change the `layout` / `theme` /
+`pad` attributes
