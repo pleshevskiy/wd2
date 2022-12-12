@@ -1,0 +1,69 @@
+#! /usr/bin/env bash
+
+d2_args=( )
+d2_input_file=
+
+function print_help() {
+  cat <<EOF
+Usage:
+  wd2 [FLAGS...] file.d2 [file.svg | file.png]
+
+A wrapper over d2 which allows to use \`layout\`, \`theme\`, \`pad\`
+attributes from d2 file. All arguments will be passed to the d2 cli,
+but these additional configs overwrite cli arguments with the
+same name.
+
+See \`d2 --help\` or \`man d2\` for detailed docs.
+
+See more docs and the source code at https://oss.terrastruct.com/d2
+EOF
+}
+
+
+function parse_args() {
+  if [ "$#" == "0" ]; then
+    print_help
+    exit 1
+  fi
+
+  while (( "$#" )); do
+    case "$1" in
+      --help)
+        print_help
+        exit 0
+        ;;
+      # extract input file arg
+      *.d2)
+        d2_input_file="$1"
+        d2_args+=( "$1" )
+        ;;
+      # other args
+      *)
+        d2_args+=( "$1" )
+        ;;
+    esac
+
+    shift
+  done
+}
+
+function get_attr_value() {
+  head -n3 "$d2_input_file" | grep "$1" | awk '{ print $3 }'
+}
+
+parse_args "$@"
+
+if [ -z "$d2_input_file" ]; then
+  print_help
+  exit 1
+fi
+
+d2_layout=$(get_attr_value "layout")
+d2_theme=$(get_attr_value "theme")
+d2_pad=$(get_attr_value "pad")
+
+d2 "${d2_args[@]}" \
+  ${d2_layout:+--layout ${d2_layout}} \
+  ${d2_theme:+--theme ${d2_theme}} \
+  ${d2_pad:+--pad ${d2_pad}}
+
