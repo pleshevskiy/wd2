@@ -48,7 +48,7 @@ function parse_args() {
 }
 
 function get_attr_value() {
-  head -n3 "$d2_input_file" | grep "$1" | awk '{ print $3 }'
+  head -n3 "$d2_input_file" | grep "$1" | awk -F"$1: " '{ print $2 }' | cut -d';' -f1
 }
 
 parse_args "$@"

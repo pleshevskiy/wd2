@@ -40,6 +40,14 @@ Then run the `wd2` script
 wd2 -w path/to/your/file.d2
 ```
 
+You can also use inline style to configure d2
+
+```d2
+# layout: elk; theme: 101; pad: 5
+
+x -> y -> z
+```
+
 # Limitation
 
 You have to restart the watch server when you change the `layout` / `theme` /
