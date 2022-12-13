@@ -1,5 +1,7 @@
 #! /usr/bin/env bash
 
+set -e
+
 d2_args=( )
 d2_input_file=
 
@@ -56,9 +58,11 @@ if [ -z "$d2_input_file" ]; then
   exit 1
 fi
 
+set +e
 d2_layout=$(get_attr_value "layout")
 d2_theme=$(get_attr_value "theme")
 d2_pad=$(get_attr_value "pad")
+set -e
 
 d2 "${d2_args[@]}" \
   ${d2_layout:+--layout ${d2_layout}} \
