@@ -48,7 +48,7 @@ function parse_args() {
 }
 
 function get_attr_value() {
-  head -n3 "$d2_input_file" | grep "$1" | awk -F"$1: " '{ print $2 }' | cut -d';' -f1
+  head -n4 "$d2_input_file" | grep "$1" | awk -F"$1: " '{ print $2 }' | cut -d';' -f1
 }
 
 parse_args "$@"
@@ -62,10 +62,12 @@ set +e
 d2_layout=$(get_attr_value "layout")
 d2_theme=$(get_attr_value "theme")
 d2_pad=$(get_attr_value "pad")
+d2_sketch=$(get_attr_value "sketch")
 set -e
 
 d2 "${d2_args[@]}" \
-  ${d2_layout:+--layout ${d2_layout}} \
-  ${d2_theme:+--theme ${d2_theme}} \
-  ${d2_pad:+--pad ${d2_pad}}
+  ${d2_layout:+--layout=${d2_layout}} \
+  ${d2_theme:+--theme=${d2_theme}} \
+  ${d2_pad:+--pad=${d2_pad}} \
+  ${d2_sketch:+--sketch=${d2_sketch}}
 
