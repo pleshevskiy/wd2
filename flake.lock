@@ -32,11 +32,11 @@
     },
     "nixpkgs": {
       "locked": {
-        "lastModified": 1670827406,
-        "narHash": "sha256-nLNk7uiLbhbvb4TVz67XK7+Ezr1zcWYDWmNrWGmEUqA=",
+        "lastModified": 1672756850,
+        "narHash": "sha256-Smbq3+fitwA13qsTMeaaurv09/KVbZfW7m7lINwzDGA=",
         "owner": "NixOS",
         "repo": "nixpkgs",
-        "rev": "ffca9ffaaafb38c8979068cee98b2644bd3f14cb",
+        "rev": "298add347c2bbce14020fcb54051f517c391196b",
         "type": "github"
       },
       "original": {
@@ -71,11 +71,11 @@
         "nixpkgs": "nixpkgs_2"
       },
       "locked": {
-        "lastModified": 1670842919,
-        "narHash": "sha256-4SpFhzzGGg7yppVCZvx0rDdVScXc/m6rZe4BYnNoOQ4=",
+        "lastModified": 1672803623,
+        "narHash": "sha256-cm2/Vry2ZM0cHeAFrJp/WXgIFI8p+Aj69GD9QqI3Tb8=",
         "ref": "refs/heads/main",
-        "rev": "79301872e58bf199118ba163d95f54e6fbefcd75",
-        "revCount": 11,
+        "rev": "b11347fa9d374b2938d6e2e50f08a8fa03bfdeb0",
+        "revCount": 20,
         "type": "git",
         "url": "https://git.pleshevski.ru/mynix/tools"
       },
