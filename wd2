@@ -10,10 +10,10 @@ function print_help() {
 Usage:
   wd2 [FLAGS...] file.d2 [file.svg | file.png]
 
-A wrapper over d2 which allows to use \`layout\`, \`theme\`, \`pad\`
-attributes from d2 file. All arguments will be passed to the d2 cli,
-but these additional configs overwrite cli arguments with the
-same name.
+A wrapper over d2 which allows to use \`layout\`, \`theme\`, \`pad\`,
+\`sketch\` and \`port\` attributes from d2 file. All arguments will 
+be passed to the d2 cli, but these additional configs overwrite cli 
+arguments with the same name.
 
 $(d2 --help | tail -n +6 - | sed -e 's/d2 \(layout\|fmt\)/wd2 \1/')
 EOF
@@ -63,11 +63,13 @@ d2_layout=$(get_attr_value "layout")
 d2_theme=$(get_attr_value "theme")
 d2_pad=$(get_attr_value "pad")
 d2_sketch=$(get_attr_value "sketch")
+d2_port=$(get_attr_value "port")
 set -e
 
 d2 "${d2_args[@]}" \
   ${d2_layout:+--layout=${d2_layout}} \
   ${d2_theme:+--theme=${d2_theme}} \
   ${d2_pad:+--pad=${d2_pad}} \
-  ${d2_sketch:+--sketch=${d2_sketch}}
+  ${d2_sketch:+--sketch=${d2_sketch}} \
+  ${d2_port:+--port=${d2_port}}
 
