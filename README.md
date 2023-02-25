@@ -1,8 +1,8 @@
 # *W*rapped _d2_
 
-A wrapper over [d2] which allows to use `layout`, `theme`, `pad`, `sketch` and
-`port` attributes from d2 file. All arguments will be passed to the d2 cli, but
-these additional configs overwrite cli arguments with the same name.
+A wrapper over [d2] which allows to use `layout`, `theme`, `dark-theme`, `pad`,
+`sketch` and `port` attributes from d2 file. All arguments will be passed to the
+d2 cli, but these additional configs overwrite cli arguments with the same name.
 
 [d2]: https://github.com/terrastruct/d2
 
