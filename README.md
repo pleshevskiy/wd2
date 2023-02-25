@@ -50,5 +50,5 @@ x -> y -> z
 
 # Limitation
 
-You have to restart the watch server when you change the `layout` / `theme` /
-`pad` attributes
+You have to restart the watch server when you change the `layout`, `theme`,
+`pad` and other attributes in a specified d2 file
